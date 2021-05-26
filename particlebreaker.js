@@ -192,6 +192,9 @@ var BlockBreaker = /** @class */ (function () {
             _this._fallBlocks.forEach(function (fallP) {
                 fallP.vy += 0.1;
                 fallP.x += fallP.vx;
+                if (fallP.x < 0) {
+                    fallP.x += BlockBreaker.WIDTH;
+                }
                 fallP.y += fallP.vy;
                 //_canvas.setPixel(fallP.x, fallP.y, fallP.color);
                 var idx = ((fallP.Y() * widthBase) + (fallP.X() * 4));
